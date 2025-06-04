@@ -2,9 +2,10 @@ export const dynamic = 'force-dynamic';
 import { supabase } from "@/lib/supabase";
 
 export default async function Home() {
-  const { data: projects, error } = await supabase
-    .from("projects")
-    .select("*");
+const { data: projects, error } = await supabase
+  .from("project-hub")
+  .select("*");
+
 
   if (error) {
     return <p className="text-red-500 p-4">Error: {error.message}</p>;
