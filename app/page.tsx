@@ -3,7 +3,8 @@ import { supabase } from "@/lib/supabase";
 
 export default async function Home() {
   const { data: projects, error } = await supabase
-    .from("project-hub")
+   .from("project_hub")
+
     .select("*");
 
   if (error) {
